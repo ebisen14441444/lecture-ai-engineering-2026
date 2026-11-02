@@ -1,0 +1,202 @@
+{
+  "assignment": "lecture02_advanced_glossary",
+  "run_id": "20261102_160734_926704",
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "num_train_epochs": 3,
+    "warmup_steps": 6,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "max_seq_len": 1024,
+    "max_new_tokens": 256,
+    "gen": {
+      "do_sample": false
+    },
+    "work_dir": "/content/lecture02_advanced/20261102_160734_926704",
+    "drive_dir": "/content/drive/MyDrive/aie2026/lecture02_advanced/20261102_160734_926704"
+  },
+  "executed_training_myself": true,
+  "source_blobs": {
+    "glossary": "bc0d6807bdb9aeef7ef9eb98e74d767e056ed745",
+    "generator": "7e53cfc38f0b70f0141b6f98eab18a94c16a2645"
+  },
+  "versions": {
+    "transformers": "5.18.0",
+    "peft": "0.21.1",
+    "trl": "1.14.2",
+    "torch": "2.11.0+cu130"
+  },
+  "counts": {
+    "terms": 58,
+    "train": 116,
+    "valid": 58,
+    "test": 24
+  },
+  "training": {
+    "seconds": 107.784,
+    "mean_train_loss": 2.0330464045206704,
+    "last_logged_loss": 1.3066959381103516,
+    "steps": 45,
+    "epoch": 3.0,
+    "log_history": [
+      {
+        "loss": 3.267212677001953,
+        "grad_norm": 3.8166849613189697,
+        "learning_rate": 0.0001970941817426052,
+        "entropy": 2.9710654497146605,
+        "num_tokens": 6095.0,
+        "mean_token_accuracy": 0.4351877927780151,
+        "epoch": 0.6896551724137931,
+        "step": 10
+      },
+      {
+        "loss": 2.22241096496582,
+        "grad_norm": 3.1114230155944824,
+        "learning_rate": 0.00015000000000000001,
+        "entropy": 2.494618666799445,
+        "num_tokens": 11783.0,
+        "mean_token_accuracy": 0.5797316024177953,
+        "epoch": 1.3448275862068966,
+        "step": 20
+      },
+      {
+        "loss": 1.7510889053344727,
+        "grad_norm": 4.443275451660156,
+        "learning_rate": 7.217825360835473e-05,
+        "entropy": 2.091287556447481,
+        "num_tokens": 17488.0,
+        "mean_token_accuracy": 0.6422704520978426,
+        "epoch": 2.0,
+        "step": 30
+      },
+      {
+        "loss": 1.3066959381103516,
+        "grad_norm": 3.3723137378692627,
+        "learning_rate": 1.1454397434679021e-05,
+        "entropy": 1.8452416062355042,
+        "num_tokens": 23504.0,
+        "mean_token_accuracy": 0.7314633071422577,
+        "epoch": 2.689655172413793,
+        "step": 40
+      },
+      {
+        "train_runtime": 107.387,
+        "train_samples_per_second": 3.241,
+        "train_steps_per_second": 0.419,
+        "total_flos": 97106757457920.0,
+        "train_loss": 2.0330464045206704,
+        "entropy": 1.762123982111613,
+        "num_tokens": 26232.0,
+        "mean_token_accuracy": 0.7527377406756083,
+        "epoch": 3.0,
+        "step": 45
+      }
+    ]
+  },
+  "summaries": [
+    {
+      "method": "before",
+      "group": "known",
+      "n": 10,
+      "point_match_rate": 0.2,
+      "abstention_rate": 0.0,
+      "seconds": 115.172
+    },
+    {
+      "method": "before",
+      "group": "alias",
+      "n": 10,
+      "point_match_rate": 0.0,
+      "abstention_rate": 0.0,
+      "seconds": 106.519
+    },
+    {
+      "method": "before",
+      "group": "outside_real",
+      "n": 2,
+      "point_match_rate": null,
+      "abstention_rate": 0.0,
+      "seconds": 21.229
+    },
+    {
+      "method": "before",
+      "group": "outside_invented",
+      "n": 2,
+      "point_match_rate": null,
+      "abstention_rate": 0.0,
+      "seconds": 21.063
+    },
+    {
+      "method": "after",
+      "group": "known",
+      "n": 10,
+      "point_match_rate": 0.1,
+      "abstention_rate": 0.0,
+      "seconds": 21.856
+    },
+    {
+      "method": "after",
+      "group": "alias",
+      "n": 10,
+      "point_match_rate": 0.3,
+      "abstention_rate": 0.0,
+      "seconds": 25.454
+    },
+    {
+      "method": "after",
+      "group": "outside_real",
+      "n": 2,
+      "point_match_rate": null,
+      "abstention_rate": 0.0,
+      "seconds": 5.135
+    },
+    {
+      "method": "after",
+      "group": "outside_invented",
+      "n": 2,
+      "point_match_rate": null,
+      "abstention_rate": 0.0,
+      "seconds": 4.615
+    },
+    {
+      "method": "dictionary_search",
+      "group": "known",
+      "n": 10,
+      "point_match_rate": 1.0,
+      "abstention_rate": 0.0,
+      "seconds": 0.006
+    },
+    {
+      "method": "dictionary_search",
+      "group": "alias",
+      "n": 10,
+      "point_match_rate": 1.0,
+      "abstention_rate": 0.0,
+      "seconds": 0.005
+    },
+    {
+      "method": "dictionary_search",
+      "group": "outside_real",
+      "n": 2,
+      "point_match_rate": null,
+      "abstention_rate": 1.0,
+      "seconds": 0.001
+    },
+    {
+      "method": "dictionary_search",
+      "group": "outside_invented",
+      "n": 2,
+      "point_match_rate": null,
+      "abstention_rate": 1.0,
+      "seconds": 0.001
+    }
+  ],
+  "regressed": [
+    "「過学習」の要点を説明してください。",
+    "「answer.md」の要点を説明してください。"
+  ],
+  "evaluation_note": "要点一致率は補助指標。全文の目視判定はmanual_review.csvに別記。"
+}
