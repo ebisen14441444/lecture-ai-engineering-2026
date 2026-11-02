@@ -1,0 +1,7 @@
+[model] gemini-3.8-flash
+[質問] LoRAとは何ですか？
+
+
+[stderr]
+
+[experiment] timeout after 120 seconds
