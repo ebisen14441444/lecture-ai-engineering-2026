@@ -11,6 +11,7 @@
 """
 
 import argparse
+from time import perf_counter
 
 from google import genai
 from google.genai import errors
@@ -23,7 +24,9 @@ DEFAULT_QUESTION = "AIE2026の講座の宿題にある「3レベル」とは何�
 
 def ask(question: str) -> str:
     client = genai.Client(api_key=get_api_key())
+    started_at = perf_counter()
     response = client.models.generate_content(model=MODEL, contents=question)
+    print(f"[応答時間] {perf_counter() - started_at:.3f} 秒")
 
     usage = response.usage_metadata
     if usage is not None:
