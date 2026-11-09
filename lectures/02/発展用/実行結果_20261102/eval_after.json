@@ -1,0 +1,556 @@
+[
+  {
+    "group": "known",
+    "term_id": "lora",
+    "query_term": "LoRA",
+    "question": "「LoRA」の要点を説明してください。",
+    "reference": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。",
+    "checks": [
+      [
+        "固定"
+      ],
+      [
+        "行列",
+        "低ランク"
+      ],
+      [
+        "学習"
+      ]
+    ],
+    "answer": "学習する重みを、入力変数の1%程度に留める小さな行列で表し、その重みを学習し、元の大きな行列を元の入力変数の1%程度に留める小さな行列に戻す。学習する重みは、入力変数の数よりも数値が小さい。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 62,
+    "hit_output_limit": false,
+    "seconds": 3.443
+  },
+  {
+    "group": "alias",
+    "term_id": "lora",
+    "query_term": "Low-Rank Adaptation",
+    "question": "「Low-Rank Adaptation」を日本語で解説してください。",
+    "reference": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoRAを扱う。",
+    "checks": [
+      [
+        "固定"
+      ],
+      [
+        "行列",
+        "低ランク"
+      ],
+      [
+        "学習"
+      ]
+    ],
+    "answer": "同じ入力と出力の構造を、低ランク（低次元）のモデルで表し、重みやパラメータをその低ランクに絞って学習させる手法。学習するパラメータが少なくなるため、学習するデータや計算量も減る。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 58,
+    "hit_output_limit": false,
+    "seconds": 3.408
+  },
+  {
+    "group": "known",
+    "term_id": "qlora",
+    "query_term": "QLoRA",
+    "question": "「QLoRA」の要点を説明してください。",
+    "reference": "ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデルがGPUに載るためLoRAで学習し、4ビットで読み込んだときのメモリと出力の違いを発展で比べる。",
+    "checks": [
+      [
+        "4",
+        "四"
+      ],
+      [
+        "量子化"
+      ],
+      [
+        "LoRA"
+      ]
+    ],
+    "answer": "大規模モデルを小さなメモリで扱うための技術。重みを低ランク（低精度）で表し、メモリを節約する。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 29,
+    "hit_output_limit": false,
+    "seconds": 1.68
+  },
+  {
+    "group": "alias",
+    "term_id": "qlora",
+    "query_term": "Quantized LoRA",
+    "question": "「Quantized LoRA」を日本語で解説してください。",
+    "reference": "ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAで学習する手法。より大きなモデルを小さなGPUで扱える。本講座の第2回演習ではモデルがGPUに載るためLoRAで学習し、4ビットで読み込んだときのメモリと出力の違いを発展で比べる。",
+    "checks": [
+      [
+        "4",
+        "四"
+      ],
+      [
+        "量子化"
+      ],
+      [
+        "LoRA"
+      ]
+    ],
+    "answer": "LoRAの重みをより小さなモデルに収めること。メモリと計算量が増えないため、軽量なモデルを学習できる。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 29,
+    "hit_output_limit": false,
+    "seconds": 1.637
+  },
+  {
+    "group": "known",
+    "term_id": "peft",
+    "query_term": "PEFT",
+    "question": "「PEFT」の要点を説明してください。",
+    "reference": "モデルの全パラメータではなく、ごく一部や追加した小さなパラメータだけを学習する手法の総称。必要なGPUメモリと保存容量を大きく減らせる。LoRAが代表例。",
+    "checks": [
+      [
+        "一部",
+        "少数",
+        "小さな"
+      ],
+      [
+        "パラメータ"
+      ],
+      [
+        "学習"
+      ]
+    ],
+    "answer": "モデルを小さなデータセットで学習させるための手法。重みを小さなベクトルで表し、後処理時に重みを戻す。メモリと計算量に制限があるときや、データ共有を許さない場合などに使われる。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 50,
+    "hit_output_limit": false,
+    "seconds": 2.778
+  },
+  {
+    "group": "alias",
+    "term_id": "peft",
+    "query_term": "Parameter-Efficient Fine-Tuning",
+    "question": "「Parameter-Efficient Fine-Tuning」を日本語で解説してください。",
+    "reference": "モデルの全パラメータではなく、ごく一部や追加した小さなパラメータだけを学習する手法の総称。必要なGPUメモリと保存容量を大きく減らせる。LoRAが代表例。",
+    "checks": [
+      [
+        "一部",
+        "少数",
+        "小さな"
+      ],
+      [
+        "パラメータ"
+      ],
+      [
+        "学習"
+      ]
+    ],
+    "answer": "モデルの重みを、必要なデータや入力・出力の範囲に絞って学習させること。重みを増やしすぎるとメモリや計算量が増え、学習するデータも増えすぎるため、学習するデータや入力・出力の範囲を小さくする。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 57,
+    "hit_output_limit": false,
+    "seconds": 3.132
+  },
+  {
+    "group": "known",
+    "term_id": "fine-tuning",
+    "query_term": "ファインチューニング",
+    "question": "「ファインチューニング」の要点を説明してください。",
+    "reference": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力の形式や口調、特定ドメインの振る舞いを身につけさせるのに向く。最新の事実を覚えさせる用途には、ツールやRAGで外部データを参照させるほうが向くことが多い。",
+    "checks": [
+      [
+        "学習済",
+        "事前学習"
+      ],
+      [
+        "追加学習",
+        "再学習",
+        "調整"
+      ]
+    ],
+    "answer": "入力データと、その入力と出力のペアを学習するモデルの追加パラメータ。質問応答の精度を上げるために使う。本講座ではLLMをテキストで扱うため、テキスト入力・出力のペアを学習する。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 52,
+    "hit_output_limit": false,
+    "seconds": 2.917
+  },
+  {
+    "group": "alias",
+    "term_id": "fine-tuning",
+    "query_term": "追加学習",
+    "question": "「追加学習」を日本語で解説してください。",
+    "reference": "事前学習済みモデルを、特定のタスクや形式に合ったデータで追加学習させること。出力の形式や口調、特定ドメインの振る舞いを身につけさせるのに向く。最新の事実を覚えさせる用途には、ツールやRAGで外部データを参照させるほうが向くことが多い。",
+    "checks": [
+      [
+        "学習済",
+        "事前学習"
+      ],
+      [
+        "追加学習",
+        "再学習",
+        "調整"
+      ]
+    ],
+    "answer": "学習データに追加して、モデルの表現をより広く、深く、あるいは特定の領域に焦点を当てられること。Pydantic AIでは Pydantic AI 拡張機能の追加学習（Pydantic AI Extension Learning）で実現する。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 53,
+    "hit_output_limit": false,
+    "seconds": 2.968
+  },
+  {
+    "group": "known",
+    "term_id": "context-window",
+    "query_term": "コンテキストウィンドウ",
+    "question": "「コンテキストウィンドウ」の要点を説明してください。",
+    "reference": "LLMが1回の呼び出しで扱える入力と出力の合計トークン数の上限。会話履歴やツールの結果もこの中に収める必要があるため、何をモデルに渡すかの設計が重要になる。",
+    "checks": [
+      [
+        "入力"
+      ],
+      [
+        "出力"
+      ],
+      [
+        "トークン"
+      ],
+      [
+        "上限",
+        "最大"
+      ]
+    ],
+    "answer": "LLMが1回の对话で処理できる入力と出力の合計トークン数。多くのモデルは100〜200トークン程度で終了。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 35,
+    "hit_output_limit": false,
+    "seconds": 1.931
+  },
+  {
+    "group": "alias",
+    "term_id": "context-window",
+    "query_term": "コンテキスト長",
+    "question": "「コンテキスト長」を日本語で解説してください。",
+    "reference": "LLMが1回の呼び出しで扱える入力と出力の合計トークン数の上限。会話履歴やツールの結果もこの中に収める必要があるため、何をモデルに渡すかの設計が重要になる。",
+    "checks": [
+      [
+        "入力"
+      ],
+      [
+        "出力"
+      ],
+      [
+        "トークン"
+      ],
+      [
+        "上限",
+        "最大"
+      ]
+    ],
+    "answer": "LLMが処理するテキストの総字数。1回の質問応答では、質問と回答の合計字数が上限（例：128字）に収まらなければ回答が返らない。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 44,
+    "hit_output_limit": false,
+    "seconds": 2.44
+  },
+  {
+    "group": "known",
+    "term_id": "learning-rate",
+    "query_term": "学習率",
+    "question": "「学習率」の要点を説明してください。",
+    "reference": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+    "checks": [
+      [
+        "パラメータ",
+        "重み"
+      ],
+      [
+        "更新",
+        "動かす",
+        "変化"
+      ]
+    ],
+    "answer": "1回の更新でパラメータをどれだけ動かすかを決める超参数。大きすぎると学習が不安定になり、小さすぎると進みすぎない。",
+    "point_match": true,
+    "abstained": false,
+    "generated_tokens": 35,
+    "hit_output_limit": false,
+    "seconds": 1.998
+  },
+  {
+    "group": "alias",
+    "term_id": "learning-rate",
+    "query_term": "learning rate",
+    "question": "「learning rate」を日本語で解説してください。",
+    "reference": "1回の更新でパラメータをどれだけ動かすかを決めるハイパーパラメータ。大きすぎると学習が不安定になり、小さすぎると進みが遅い。",
+    "checks": [
+      [
+        "パラメータ",
+        "重み"
+      ],
+      [
+        "更新",
+        "動かす",
+        "変化"
+      ]
+    ],
+    "answer": "学習の進め方を決めるパラメータ。学習率（学習回数あたりの更新量）を決める。大きすぎると過学習し、小さすぎると進めにくい。",
+    "point_match": true,
+    "abstained": false,
+    "generated_tokens": 39,
+    "hit_output_limit": false,
+    "seconds": 2.208
+  },
+  {
+    "group": "known",
+    "term_id": "epoch",
+    "query_term": "エポック",
+    "question": "「エポック」の要点を説明してください。",
+    "reference": "学習データ全体を1周学習することを1エポックと数える。回数を増やしすぎると過学習しやすい。",
+    "checks": [
+      [
+        "学習データ",
+        "データセット",
+        "データ全体"
+      ],
+      [
+        "1周",
+        "一周",
+        "1回",
+        "一回"
+      ]
+    ],
+    "answer": "1回の学習でモデルが覚える入力と出力のペアの総数。学習率とエポック数を決める上で重要。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 30,
+    "hit_output_limit": false,
+    "seconds": 1.698
+  },
+  {
+    "group": "alias",
+    "term_id": "epoch",
+    "query_term": "epoch",
+    "question": "「epoch」を日本語で解説してください。",
+    "reference": "学習データ全体を1周学習することを1エポックと数える。回数を増やしすぎると過学習しやすい。",
+    "checks": [
+      [
+        "学習データ",
+        "データセット",
+        "データ全体"
+      ],
+      [
+        "1周",
+        "一周",
+        "1回",
+        "一回"
+      ]
+    ],
+    "answer": "1回の学習サイクルで、データ全体を学習する時間とコスト。1エポッチあたりの学習回数や計算量、メモリ使用量、時間などには大きく左右される。",
+    "point_match": true,
+    "abstained": false,
+    "generated_tokens": 39,
+    "hit_output_limit": false,
+    "seconds": 2.191
+  },
+  {
+    "group": "known",
+    "term_id": "overfitting",
+    "query_term": "過学習",
+    "question": "「過学習」の要点を説明してください。",
+    "reference": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+    "checks": [
+      [
+        "学習データ",
+        "訓練データ"
+      ],
+      [
+        "未知",
+        "汎化",
+        "新しい"
+      ]
+    ],
+    "answer": "学習データに過ぎない。実際の利用するデータや、外部の知識や状況に則るモデルを作る。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 24,
+    "hit_output_limit": false,
+    "seconds": 1.335
+  },
+  {
+    "group": "alias",
+    "term_id": "overfitting",
+    "query_term": "オーバーフィッティング",
+    "question": "「オーバーフィッティング」を日本語で解説してください。",
+    "reference": "学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。",
+    "checks": [
+      [
+        "学習データ",
+        "訓練データ"
+      ],
+      [
+        "未知",
+        "汎化",
+        "新しい"
+      ]
+    ],
+    "answer": "モデルが過学習した状態。学習データに過ぎない入力データで、学習してある知識やパターンを突いて新しいデータに適合させること。評価データにない入力データで、モデルが判断しにくい。",
+    "point_match": true,
+    "abstained": false,
+    "generated_tokens": 47,
+    "hit_output_limit": false,
+    "seconds": 2.764
+  },
+  {
+    "group": "known",
+    "term_id": "homework-levels",
+    "query_term": "宿題の3レベル",
+    "question": "「宿題の3レベル」の要点を説明してください。",
+    "reference": "AIE2026の宿題の構成。「基礎（講義内容の確認）」「実装（自分でコードを書く）」「発展（調査や試行）」の3段階があり、どれか1つに取り組めばその回の宿題は完了。原則として採点はしない。",
+    "checks": [
+      [
+        "基礎"
+      ],
+      [
+        "実装"
+      ],
+      [
+        "発展"
+      ]
+    ],
+    "answer": "AIE2026の宿題の構成。基礎知識と応用を分けて、それぞれが到達度と評価の重みで決める。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 35,
+    "hit_output_limit": false,
+    "seconds": 1.965
+  },
+  {
+    "group": "alias",
+    "term_id": "homework-levels",
+    "query_term": "宿題レベル",
+    "question": "「宿題レベル」を日本語で解説してください。",
+    "reference": "AIE2026の宿題の構成。「基礎（講義内容の確認）」「実装（自分でコードを書く）」「発展（調査や試行）」の3段階があり、どれか1つに取り組めばその回の宿題は完了。原則として採点はしない。",
+    "checks": [
+      [
+        "基礎"
+      ],
+      [
+        "実装"
+      ],
+      [
+        "発展"
+      ]
+    ],
+    "answer": "学習データの準備・モデルの選択・学習・評価・結果の分析・報告・提出の段階。本講座では第1回の宿題として、学習データの準備とモデルの選択を扱う。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 43,
+    "hit_output_limit": false,
+    "seconds": 2.386
+  },
+  {
+    "group": "known",
+    "term_id": "answer-md",
+    "query_term": "answer.md",
+    "question": "「answer.md」の要点を説明してください。",
+    "reference": "AIE2026で各回の演習・宿題の結果を書くファイル。lectures/NN/answer.md にあり、取り組んだレベル・やったこと・結果・気づきを記入して、作業ブランチから自分のforkの main へPRを出して提出する。",
+    "checks": [
+      [
+        "answer.md"
+      ],
+      [
+        "結果",
+        "考察",
+        "解答"
+      ]
+    ],
+    "answer": "LLMが質問と答えをペアで学習する出力ファイル。質問と答えの両方を書き込むことで、LLMが質問を返す能力を身につけさせる。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 38,
+    "hit_output_limit": false,
+    "seconds": 2.111
+  },
+  {
+    "group": "alias",
+    "term_id": "answer-md",
+    "query_term": "解答ファイル",
+    "question": "「解答ファイル」を日本語で解説してください。",
+    "reference": "AIE2026で各回の演習・宿題の結果を書くファイル。lectures/NN/answer.md にあり、取り組んだレベル・やったこと・結果・気づきを記入して、作業ブランチから自分のforkの main へPRを出して提出する。",
+    "checks": [
+      [
+        "answer.md"
+      ],
+      [
+        "結果",
+        "考察",
+        "解答"
+      ]
+    ],
+    "answer": "LLMが受け取る出力のファイル。モデルが質問に答えることではなく、指示に従うこと（例：コードを書く、数値を計算する）の結果をここに書き込む。",
+    "point_match": false,
+    "abstained": false,
+    "generated_tokens": 42,
+    "hit_output_limit": false,
+    "seconds": 2.32
+  },
+  {
+    "group": "outside_real",
+    "term_id": null,
+    "query_term": "ドロップアウト",
+    "question": "「ドロップアウト」の意味を説明してください。",
+    "reference": "実在する未収録語。学習時に一部のユニット等を確率的に無効化し、過学習を抑える手法。",
+    "checks": null,
+    "answer": "モデルが受け取る入力と、実際に処理する入力（例：LLMはテキスト、RAGはファイル）の間の不調を指す。出力が期待する形に達しない、または出力が不自然になる時がある。",
+    "point_match": null,
+    "abstained": false,
+    "generated_tokens": 51,
+    "hit_output_limit": false,
+    "seconds": 2.908
+  },
+  {
+    "group": "outside_real",
+    "term_id": null,
+    "query_term": "バッチ正規化",
+    "question": "「バッチ正規化」の意味を説明してください。",
+    "reference": "実在する未収録語。バッチ内の平均や分散等を使って活性を正規化する手法。",
+    "checks": null,
+    "answer": "複数のコマンドを1回の呼び出しで処理し、結果をまとめて返す仕組み。同じ操作を繰り返すたびに同じ結果を返すため、同じ入力で同じ出力になる。",
+    "point_match": null,
+    "abstained": false,
+    "generated_tokens": 40,
+    "hit_output_limit": false,
+    "seconds": 2.227
+  },
+  {
+    "group": "outside_invented",
+    "term_id": null,
+    "query_term": "AIE架空用語ゼータ17",
+    "question": "「AIE架空用語ゼータ17」の意味を説明してください。",
+    "reference": "この実験で作成した架空語。定義を創作せず、不明・未登録として回答する。",
+    "checks": null,
+    "answer": "AIE（AIエージェント）の17つの基本機能。学習・評価・ツール・エージェント・ツール・エージェント・評価・ツール・ツール・エージェント・評価・ツール・エージェント・評価・ツール・エージェント。",
+    "point_match": null,
+    "abstained": false,
+    "generated_tokens": 46,
+    "hit_output_limit": false,
+    "seconds": 2.594
+  },
+  {
+    "group": "outside_invented",
+    "term_id": null,
+    "query_term": "AIE架空用語オメガ29",
+    "question": "「AIE架空用語オメガ29」の意味を説明してください。",
+    "reference": "この実験で作成した架空語。定義を創作せず、不明・未登録として回答する。",
+    "checks": null,
+    "answer": "AIE（アーツ・イン・エディタリング）の29回。本講座の第29回演習。本講座の最終演習。",
+    "point_match": null,
+    "abstained": false,
+    "generated_tokens": 36,
+    "hit_output_limit": false,
+    "seconds": 2.021
+  }
+]
